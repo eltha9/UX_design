@@ -20,3 +20,16 @@ upper_buttons.right.addEventListener('click', ()=>{
         upper_buttons.left.classList.toggle('selected')
     }
 })
+
+// card
+
+let cards = left_div.querySelectorAll('.cards .card')
+
+for( let i=0; i<cards.length; i++){
+    let plus = cards[i].querySelector('svg')
+
+
+    plus.addEventListener('click', ()=>{
+        cards[i].classList.toggle('open')
+    })
+}

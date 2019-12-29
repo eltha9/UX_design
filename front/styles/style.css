@@ -19,7 +19,7 @@ body{
 
 /* LEFT-DIV */
 .left-div{
-    width: 30vw;
+    width: 44vw;
     
     margin: 24px 0;
     background-color: #fff;
@@ -89,10 +89,17 @@ body{
     background-color: #F1F0F0;
     border-radius: 6px;
 
-    height: 10vh;
+    height: 16vh;
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+
+    will-change: height;
+    transition: height 0.3s ease-out;
+}
+
+.card.open{
+    height: 24vh;
 }
 
 .card .alert{
@@ -124,6 +131,9 @@ body{
     flex-grow: 1;
     position: relative;
     padding: 10px 10px 10px 30px; 
+
+    display: flex;
+    flex-direction: row;
 }
 
 .card .info .time{
@@ -135,6 +145,71 @@ body{
     font-weight: bolder;
 }
 
+.card .info svg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-10px, -10px);
+    cursor: pointer;
+}
+.card .info svg path.plus{
+    display: block;
+}
+
+.card.open .info svg path.plus{
+    display: none;
+}
+.card .info svg path.minus{
+    display: none;
+}
+
+.card.open .info svg path.minus{
+    display: block;
+}
+
+.card .info .content{
+    padding-top:0.9em;
+}
+.card .info .content .salle{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.9em;
+}
+.card .info .content .name{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.9em;
+}
+.card .info .content .name span{
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: italic;
+}
+.card .info .content .status{
+    font-weight: lighter;
+    font-size: 0.6em;
+    color: #2E5200;
+}
+
+.card.waiting .info .content .status{
+    font-weight: lighter;
+    font-size: 0.6em;
+    color: #FF2828;
+}
+
+
+.card .info .photo{
+    background-color: #B2B2B2;
+    width: 7vh;
+    height: 7vh;
+    position: absolute;
+    border-radius: 50%;
+
+    top:0;
+    right: 0;
+
+    transform: translate( calc(-4vh - 50% ) , calc(8vh - 50% ) );
+}
 
 
 /* assigned */
