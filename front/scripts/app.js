@@ -5,7 +5,7 @@ const left_div = document.querySelector('.left-div')
 let upper_buttons = {
     left: left_div.querySelector('.upper-menu .upper-left-button'),
     right: left_div.querySelector('.upper-menu .upper-right-button'),
-    notif: left_div.querySelector('.upper-menu .upper-right-button svg circle')
+    notif: left_div.querySelector('.upper-menu .upper-left-button svg circle')
 }
 
 upper_buttons.left.addEventListener('click', ()=>{
