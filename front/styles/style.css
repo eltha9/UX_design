@@ -1,20 +1,43 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+html{
+    height: 100%;
+}
 
 body{
+    height: 100vh; 
     background-color: #DDD;
-    margin: 24px 26px
+    margin:0;
+    
+    padding: 0 26px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 /* LEFT-DIV */
 .left-div{
+    width: 29vw;
+    
+    margin: 24px 0;
+    background-color: #fff;
 
+    margin-right: 24px;
+    border-radius: 10px;
+    padding: 20px 25px;
 }
 
 
 
 /* MAIN-DIV */
 .main-div{
-
+    width: auto;
+    
+    margin: 24px 0;
+    background-color: #fff;
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 20px 50px;
 }
