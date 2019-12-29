@@ -29,6 +29,58 @@ body{
     padding: 20px 25px;
 }
 
+/* upper-menu */
+.left-div .upper-menu{
+    display: flex;
+    flex-direction: row;
+    border-radius: 6px;
+}
+.left-div .upper-menu .upper-button{
+
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F0F0;
+    padding: 8px 0;
+    transition: background 0.3s ease-out;
+}
+.left-div .upper-menu .upper-button.selected{
+    background-color: #8E8D8D;
+}
+.left-div .upper-menu .upper-button:hover{
+    cursor: pointer;
+}
+.left-div .upper-menu .upper-button:not(.selected):hover{
+    background-color: #c2c2c2;
+}
+
+.left-div .upper-menu .upper-left-button{
+
+    border-radius: 6px 0 0 6px;
+}
+.left-div .upper-menu .upper-right-button{
+    
+    border-radius: 0 6px 6px 0;
+}
+
+
+.left-div .upper-menu .upper-button.selected svg{
+    fill: #FFF;
+}
+.left-div .upper-menu .upper-button svg{
+    fill: #8E8D8D;
+}
+
+.left-div .upper-menu .upper-left-button svg circle{
+    display: none;;
+}
+.left-div .upper-menu .upper-left-button svg circle.have{
+    display: block;
+}
+
+/* assigned */
 
 
 /* MAIN-DIV */
