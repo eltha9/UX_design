@@ -134,8 +134,8 @@ body{
     position: relative;
     padding: 10px 10px 10px 30px; 
 
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: column;
 }
 
 .card .info .time{
@@ -239,24 +239,27 @@ body{
 
 .card .info .more-info .patient-name{
     font-size: 0.6em;
-    font-weight: normal;
+    font-weight: bold;
 }
 .card .info .more-info h3{
     font-size: 0.6em;
-    font-weight: normal;
+    font-weight: bold;
 }
 .card .info .more-info h3 u{
     text-decoration: underline;
 }
 .card .info .more-info .antecedent-content{
-    font-size: 0.5em;
+    font-size: 0.6em;
     font-weight: lighter;
     padding-right: 16px;
     overflow-y: scroll;
+    flex-grow: 1;
+
+    max-height: 5vh;
 }
-/* .card .info .more-info .antecedent-content::-webkit-scrollbar{
+.card .info .more-info .antecedent-content::-webkit-scrollbar{
     display: none;
-} */
+}
 
 /* assigned */
 .left-div h2{
@@ -277,12 +280,33 @@ body{
     overflow-y: scroll;
     flex-grow: 1;
     max-height: 34vh;
+    min-height: fit-content;
 }
 .left-div .cards-div .cards::-webkit-scrollbar{
     display: none;
 }
 
+.left-div .current.selected{
+    display: block;
+}
+.left-div .current{
+    display: none;
+}
+.left-div .historique.selected{
+    display: block;
+}
+.left-div .historique{
+    display: none;
+}
 
+.left-div .historique .cards{
+    max-height: 77vh;
+
+    overflow-y: scroll;
+}
+.left-div .historique .cards::-webkit-scrollbar{
+    display: none;
+}
 
 /* MAIN-DIV */
 .main-div{
