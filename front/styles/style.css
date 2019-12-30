@@ -96,10 +96,12 @@ body{
 
     will-change: height;
     transition: height 0.3s ease-out;
+
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
 }
 
 .card.open{
-    height: 24vh;
+    height: 28vh;
 }
 
 .card .alert{
@@ -132,8 +134,8 @@ body{
     position: relative;
     padding: 10px 10px 10px 30px; 
 
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 .card .info .time{
@@ -169,6 +171,7 @@ body{
 
 .card .info .content{
     padding-top:0.9em;
+    margin-bottom: 14px;
 }
 .card .info .content .salle{
     font-size: 1em;
@@ -211,6 +214,49 @@ body{
     transform: translate( calc(-4vh - 50% ) , calc(8vh - 50% ) );
 }
 
+
+
+.card .info .more-info{
+
+    will-change: opacity;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.card.open .info .more-info{
+
+    opacity: 1;
+}
+
+.card .info .more-info .line{
+    height: 1px;
+    width:40%;
+
+    background-color: #E0E0E0;
+
+    margin-bottom: 15px;
+
+}
+
+.card .info .more-info .patient-name{
+    font-size: 0.6em;
+    font-weight: normal;
+}
+.card .info .more-info h3{
+    font-size: 0.6em;
+    font-weight: normal;
+}
+.card .info .more-info h3 u{
+    text-decoration: underline;
+}
+.card .info .more-info .antecedent-content{
+    font-size: 0.5em;
+    font-weight: lighter;
+    padding-right: 16px;
+    overflow-y: scroll;
+}
+/* .card .info .more-info .antecedent-content::-webkit-scrollbar{
+    display: none;
+} */
 
 /* assigned */
 .left-div h2{
