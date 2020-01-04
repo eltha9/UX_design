@@ -1,0 +1,130 @@
+body{
+    height: 100vh; 
+    background-color: #FFF;
+    margin:0;
+    
+    padding: 0 44px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    position: relative;
+    /* overflow: hidden; */
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.logo{
+    position: absolute;
+    top:14px;
+    left:25px;
+}
+
+.left , .right{
+    flex-grow: 1;
+    min-width:  calc(50% - 2.5px);
+    max-width: calc(50% - 2.5px);
+}
+
+.left, .right, .vertical-line{
+    margin: 38px 0;
+}
+
+.vertical-line{
+    width: 1px;
+
+    background-color: #0079E9;
+}
+
+/* LEFT BLOC */
+.left{
+    /* background-color: orange; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-items: center; */
+
+    /* padding-right: 4em; */
+}
+
+.left .wellcome-text{
+    font-weight: normal;
+    /* font-size: 1.2em; */
+    font-size: 1.8em;
+    color:#0079E9;
+    width: 90%;
+}
+.left .wellcome-text b{
+    font-weight: bold;;
+}
+
+
+/* RIGHT BLOC */
+.right{
+    /* background-color: green; */
+    display: flex;
+    
+    align-items:center;
+}
+
+.right .content{
+    margin-left: 10%;
+    width: 80%;
+}
+
+.right .content h1{
+    color:#0079E9;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 66px;
+}
+
+.right .content form{
+    display: flex;
+    flex-direction: column;
+}
+.right .content form input[type="text"], .right .content form input[type="password"]{
+    border:none;
+    border-bottom: 1px solid #B2B2B2;
+    margin-bottom: 25px;
+    will-change: border;
+    transition: border 0.3s ease-out;
+
+    font-size: 1.5em;
+    color: #0079E9;
+    height: 1.8em;
+    outline: none;
+}
+.right .content form input[type="text"]::placeholder , .right .content form input[type="password"]::placeholder{
+    font-size: 1.5em;
+    color: #0079E9;
+}
+.right .content form input[type="text"]:focus , .right .content form input[type="password"]:focus{
+    border-bottom: 1px solid #0079E9;
+
+}
+.right .content form input[type="text"]:hover , .right .content form input[type="password"]:hover{
+    border-bottom: 1px solid #0079E9;
+
+}
+.right .content form input[type="submit"]{
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #0079E9;
+    color:white;
+    padding: 14px 28px;
+    width: fit-content;
+    border-radius: 41px;
+    cursor: pointer;
+    border:none !important;
+
+    box-shadow: none;
+    will-change: box-shadow;
+    transition: box-shadow 0.3s ease-out;
+
+}
+.right .content form input[type="submit"]:hover{
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}

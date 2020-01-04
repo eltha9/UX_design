@@ -12,5 +12,3 @@
         default:
             echo "oups";
     }
-
-?>
