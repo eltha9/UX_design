@@ -85,7 +85,7 @@ nav .right-menu svg{
     cursor: pointer
 }
 nav .right-menu svg.selected{
-    
+
 }
 
 /* 
@@ -125,15 +125,297 @@ nav .right-menu svg.selected{
     MAIN 
 */
 main{
-    background-color: lightblue;
+    /* background-color: lightblue; */
 
     flex-grow: 1;
     position: relative;
 }
 /* left */
 section.left{
+    /* background-color: pink; */
+    width: 24%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+
+    transform: translateX(-80%);
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+    padding: 25px 0;
+
+    border-right: 1px solid #F1F0F0;
 
 }
+section.left.open{
+    transform: translateX(0%);
+}
+
+
+/* upper-menu */
+section.left .upper-menu{
+    display: flex;
+    flex-direction: row;
+    border-radius: 6px;
+    margin: 0 20px 0 25px;
+}
+section.left .upper-menu .upper-button{
+
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F0F0;
+    padding: 8px 0;
+    transition: background 0.3s ease-out;
+}
+section.left .upper-menu .upper-button.selected{
+    background-color: #8E8D8D;
+}
+section.left .upper-menu .upper-button:hover{
+    cursor: pointer;
+}
+section.left .upper-menu .upper-button:not(.selected):hover{
+    background-color: #c2c2c2;
+}
+
+section.left .upper-menu .upper-left-button{
+
+    border-radius: 6px 0 0 6px;
+}
+section.left .upper-menu .upper-right-button{
+    
+    border-radius: 0 6px 6px 0;
+}
+
+
+section.left .upper-menu .upper-button.selected svg{
+    fill: #FFF;
+}
+section.left .upper-menu .upper-button svg{
+    fill: #8E8D8D;
+}
+
+section.left .upper-menu .upper-left-button svg circle{
+    display: none;;
+}
+section.left .upper-menu .upper-left-button svg circle.have{
+    display: block;
+}
+
+/* card */
+.card{
+    background-color: #F1F0F0;
+    border-radius: 6px;
+
+    height: 16vh;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+
+    will-change: height;
+    transition: height 0.3s ease-out;
+
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.card.open{
+    height: 28vh;
+}
+
+.card .alert{
+    width: 11px;
+    background-color: #8E8D8D;
+    border-radius: 6px 0 0 6px;
+}
+.card.alert-1 .alert{
+    
+    background-color: #AEDD73;
+    
+}
+.card.alert-2 .alert{
+    
+    background-color: #F6B77D;
+    
+}
+.card.alert-3 .alert{
+    
+    background-color: #F67D7D;
+    
+}
+.card.alert-4 .alert{
+    
+    background-color: #B871DA;
+    
+}
+.card .info{
+    flex-grow: 1;
+    position: relative;
+    padding: 10px 10px 10px 30px; 
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card .info .time{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-10px, 10px);
+    font-size: 0.6em;
+    font-weight: bolder;
+}
+
+.card .info svg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-10px, -10px);
+    cursor: pointer;
+}
+.card .info svg path.plus{
+    display: block;
+}
+
+.card.open .info svg path.plus{
+    display: none;
+}
+.card .info svg path.minus{
+    display: none;
+}
+
+.card.open .info svg path.minus{
+    display: block;
+}
+
+.card .info .content{
+    padding-top:0.9em;
+    margin-bottom: 14px;
+}
+.card .info .content .salle{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.9em;
+}
+.card .info .content .name{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.9em;
+}
+.card .info .content .name span{
+    font-size: 0.6em;
+    font-weight: normal;
+    font-style: italic;
+}
+.card .info .content .status{
+    font-weight: lighter;
+    font-size: 0.6em;
+    color: #2E5200;
+}
+
+.card.waiting .info .content .status{
+    font-weight: lighter;
+    font-size: 0.6em;
+    color: #FF2828;
+}
+
+
+
+
+.card .info .more-info{
+
+    will-change: opacity;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.card.open .info .more-info{
+
+    opacity: 1;
+}
+
+.card .info .more-info .line{
+    height: 1px;
+    width:40%;
+
+    background-color: #E0E0E0;
+
+    margin-bottom: 15px;
+
+}
+
+.card .info .more-info .patient-name{
+    font-size: 0.6em;
+    font-weight: bold;
+}
+.card .info .more-info h3{
+    font-size: 0.6em;
+    font-weight: bold;
+}
+.card .info .more-info h3 u{
+    text-decoration: underline;
+}
+.card .info .more-info .antecedent-content{
+    font-size: 0.6em;
+    font-weight: lighter;
+    padding-right: 16px;
+    overflow-y: scroll;
+    flex-grow: 1;
+
+    max-height: 5vh;
+}
+.card .info .more-info .antecedent-content::-webkit-scrollbar{
+    display: none;
+}
+
+/* assigned */
+section.left h2{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    
+}
+
+section.left .cards-div{
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 0 25px;
+}
+section.left .cards-div .cards{
+
+    overflow-y: scroll;
+    flex-grow: 1;
+    max-height: 34vh;
+    min-height: fit-content;
+}
+section.left .cards-div .cards::-webkit-scrollbar{
+    display: none;
+}
+
+section.left .current.selected{
+    display: block;
+}
+section.left .current{
+    display: none;
+}
+section.left .historique.selected{
+    display: block;
+}
+section.left .historique{
+    display: none;
+}
+
+section.left .historique .cards{
+    max-height: 77vh;
+
+    overflow-y: scroll;
+}
+section.left .historique .cards::-webkit-scrollbar{
+    display: none;
+}
+
 
 /* map */
 section.map{
