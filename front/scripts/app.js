@@ -1,49 +1,43 @@
-const left_div = document.querySelector('.left-div')
+const nav = document.querySelector('nav')
+const main = document.querySelector('main')
+const map = main.querySelector('section.map')
+const left_menu = main.querySelector('section.left')
 
-
-// upper button
-let upper_buttons = {
-    left: left_div.querySelector('.upper-menu .upper-left-button'),
-    right: left_div.querySelector('.upper-menu .upper-right-button'),
-    notif: left_div.querySelector('.upper-menu .upper-left-button svg circle')
+// nav
+const popups = {
+    setting: main.querySelector('.popup-setting'),
+    team: main.querySelector('.popup-team')
 }
 
-let left_main_divs = {
-    current: left_div.querySelector('.current'),
-    historique: left_div.querySelector('.historique')
+const nav_buttons= {
+    setting: nav.querySelector('.setting'),
+    team: nav.querySelector('.team')
 }
 
-upper_buttons.left.addEventListener('click', ()=>{
-    if( !upper_buttons.left.classList.contains('selected')){
-        upper_buttons.left.classList.toggle('selected')
-        upper_buttons.right.classList.toggle('selected')
-
-        left_main_divs.current.classList.toggle('selected')
-        left_main_divs.historique.classList.toggle('selected')
-
-    }
-})
-upper_buttons.right.addEventListener('click', ()=>{
-    if( !upper_buttons.right.classList.contains('selected')){
-        upper_buttons.right.classList.toggle('selected')
-        upper_buttons.left.classList.toggle('selected')
-
-
-        left_main_divs.historique.classList.toggle('selected')
-        left_main_divs.current.classList.toggle('selected')
-
+nav_buttons.setting.addEventListener('click', ()=>{
+    if(!popups.setting.classList.contains('open')){
+        if(popups.team.classList.contains('open')){
+            popups.team.classList.toggle('open')
+            nav_buttons.team.classList.toggle('selected')
+        }
+        popups.setting.classList.toggle('open')
+        nav_buttons.setting.classList.toggle('selected')
+    }else{
+        popups.setting.classList.toggle('open')
+        nav_buttons.setting.classList.toggle('selected')
     }
 })
 
-// card
-
-let cards = left_div.querySelectorAll('.cards .card')
-
-for( let i=0; i<cards.length; i++){
-    let plus = cards[i].querySelector('svg')
-
-
-    plus.addEventListener('click', ()=>{
-        cards[i].classList.toggle('open')
-    })
-}
+nav_buttons.team.addEventListener('click', ()=>{
+    if(!popups.team.classList.contains('open')){
+        if(popups.setting.classList.contains('open')){
+            popups.setting.classList.toggle('open')
+            nav_buttons.setting.classList.toggle('selected')
+        }
+        popups.team.classList.toggle('open')
+        nav_buttons.team.classList.toggle('selected')
+    }else{
+        popups.team.classList.toggle('open')
+        nav_buttons.team.classList.toggle('selected')
+    }
+})
