@@ -41,3 +41,30 @@ nav_buttons.team.addEventListener('click', ()=>{
         nav_buttons.team.classList.toggle('selected')
     }
 })
+
+
+// LEFT div upper button
+
+const left_upper_menu = {
+    alertes: left_menu.querySelector('.upper-menu .upper-button.upper-left-button'),
+    historique: left_menu.querySelector('.upper-menu .upper-button.upper-right-button'),
+    close: left_menu.querySelector('.upper-menu .close-button')
+}
+
+left_upper_menu.alertes.addEventListener('click', ()=>{
+    if(!left_upper_menu.alertes.classList.contains('selected')){
+        left_upper_menu.historique.classList.toggle('selected')
+        left_upper_menu.alertes.classList.toggle('selected')
+    }
+})
+
+left_upper_menu.historique.addEventListener('click', ()=>{
+    if(!left_upper_menu.historique.classList.contains('selected')){
+        left_upper_menu.alertes.classList.toggle('selected')
+        left_upper_menu.historique.classList.toggle('selected')
+    }
+})
+
+left_upper_menu.close.addEventListener('click', ()=>{
+
+})
