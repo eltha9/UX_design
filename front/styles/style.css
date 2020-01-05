@@ -195,7 +195,7 @@ section.left{
 
     transform: translateX(-80%);
     will-change: transform;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.6s ease-out;
     padding: 25px 0;
 
     border-right: 1px solid #F1F0F0;
@@ -232,6 +232,8 @@ section.left .upper-menu .upper-button{
     will-change: border, background, color;
     transition-property: background,color,border;
     transition:  0.3s ease-out;
+
+    position: relative;
 
 
 }
@@ -284,6 +286,41 @@ section.left .upper-menu .close-button{
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+
+
+section.left .content{
+    opacity: 0;
+    will-change: opacity;
+    transition:opacity 0.6s ease-out;
+}
+section.left.open .content{
+    opacity: 1;
+}
+
+section.left .open-menu{
+    opacity: 1;
+
+    position: absolute;
+    top:0%;
+    right: 0%;
+    width: 20%;
+    height: 100%;
+    /* transform: translate(-50%,-50%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: opacity;
+    transition:opacity 0.6s ease-out;
+
+}
+section.left.open .open-menu{
+    opacity: 0;
+    display: none;
+}
+
+section.left .open-menu svg{
+    cursor:pointer;
 }
 
 /* card */

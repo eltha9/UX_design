@@ -48,7 +48,8 @@ nav_buttons.team.addEventListener('click', ()=>{
 const left_upper_menu = {
     alertes: left_menu.querySelector('.upper-menu .upper-button.upper-left-button'),
     historique: left_menu.querySelector('.upper-menu .upper-button.upper-right-button'),
-    close: left_menu.querySelector('.upper-menu .close-button')
+    close: left_menu.querySelector('.upper-menu .close-button'),
+    open: left_menu.querySelector('.open-menu')
 }
 
 left_upper_menu.alertes.addEventListener('click', ()=>{
@@ -66,5 +67,13 @@ left_upper_menu.historique.addEventListener('click', ()=>{
 })
 
 left_upper_menu.close.addEventListener('click', ()=>{
+    if(left_menu.classList.contains('open')){
+        left_menu.classList.toggle('open')
+    }
+})
 
+left_upper_menu.open.addEventListener('click', ()=>{
+    if(!left_menu.classList.contains('open')){
+        left_menu.classList.toggle('open')
+    }
 })
