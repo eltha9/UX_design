@@ -52,17 +52,34 @@ const left_upper_menu = {
     open: left_menu.querySelector('.open-menu')
 }
 
+const left_menu_part = {
+    alertes: left_menu.querySelector('.content .current') ,
+    historique: left_menu.querySelector('.content .historique') 
+}
+
 left_upper_menu.alertes.addEventListener('click', ()=>{
     if(!left_upper_menu.alertes.classList.contains('selected')){
         left_upper_menu.historique.classList.toggle('selected')
         left_upper_menu.alertes.classList.toggle('selected')
+
+        if(!left_menu_part.alertes.classList.contains('selected')){
+            left_menu_part.alertes.classList.toggle('selected')
+            left_menu_part.historique.classList.toggle('selected')
+        }
     }
+
+    
 })
 
 left_upper_menu.historique.addEventListener('click', ()=>{
     if(!left_upper_menu.historique.classList.contains('selected')){
         left_upper_menu.alertes.classList.toggle('selected')
         left_upper_menu.historique.classList.toggle('selected')
+
+        if(!left_menu_part.historique.classList.contains('selected')){
+            left_menu_part.alertes.classList.toggle('selected')
+            left_menu_part.historique.classList.toggle('selected')
+        }
     }
 })
 

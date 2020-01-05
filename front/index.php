@@ -1,5 +1,5 @@
 <?php 
-
+    http_response_code(404);
     $page=$_GET['q'];
 
     switch($page){
