@@ -592,7 +592,7 @@ section.left .historique .cards::-webkit-scrollbar{
     display: none;
 }
 /* popup info */
-.popup-info{
+section.popup-info{
     display: none;
     position: absolute;
     top:0;
@@ -602,16 +602,16 @@ section.left .historique .cards::-webkit-scrollbar{
 
     background-color: rgba(0, 0, 0, 0.25);
 
-    display: flex;
+    
     align-items: center;
     justify-content: center;
 
 }
-.popup-info.open{
-    display: none;
+section.popup-info.open{
+    display: flex;
 }
 
-.popup .content{
+section.popup-info .content{
     background-color: #fff;
     border: 1px solid #0079E9;
     border-radius: 3px;
