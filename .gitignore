@@ -505,3 +505,5 @@ fabric.properties
 #custom
 
 *.ini
+*.ttf
+front/fonts/*
