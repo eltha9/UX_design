@@ -60,7 +60,7 @@ const left_upper_menu = {
     alertes: left_menu.querySelector('.upper-menu .upper-button.upper-left-button'),
     historique: left_menu.querySelector('.upper-menu .upper-button.upper-right-button'),
     close: left_menu.querySelector('.upper-menu .close-button'),
-    open: left_menu.querySelector('.open-menu')
+    open: left_menu.querySelector('.open-menu svg')
 }
 
 const left_menu_part = {
@@ -152,3 +152,11 @@ for(let i=0; i<cards.length; i++){
 </div>
 
 */
+
+
+// popup info
+
+const popup_info= {
+    button: left_menu.querySelector('h2.special span.info'),
+    div: document.querySelector('.popup-info')
+}

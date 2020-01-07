@@ -17,6 +17,8 @@ body{
     align-items: stretch;
 
     overflow: hidden;
+
+    position: relative;
 }
 /* 
     LOGO 
@@ -376,6 +378,19 @@ section.left .open-menu svg{
 
 }
 
+.card.alert-1.open .inner-card{
+    border: 1px solid #AEDD73;
+}
+.card.alert-2.open .inner-card{
+    border: 1px solid #F6B77D;
+}
+.card.alert-3.open .inner-card{
+    border: 1px solid #FA5050;
+}
+.card.alert-4.open .inner-card{
+    border: 1px solid #B871DA;
+}
+
 .card .inner-card{
     background-color: #FFF;
     border-radius: 10px 10px 0 10px;
@@ -390,7 +405,8 @@ section.left .open-menu svg{
     border: 1px solid #B2B2B2;
 
     will-change: height;
-    transition: height 0.3s ease-out;
+    transition-property: height, border;
+    transition: 0.3s ease-out;
 
     /* clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); */
     position: absolute;
@@ -510,7 +526,28 @@ section.left h2{
     /* margin-bottom: 20px; */
     color:#1B5489;
     margin: 25px 20px 0px 25px;
-    
+
+}
+section.left h2.special{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+section.left h2.special span.info{
+    color: #FFF;
+    background-color: #1B5489;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    font-size: 1em;
+    font-weight: bold;
 }
 
 section.left .cards-div{
@@ -554,7 +591,34 @@ section.left .historique .cards{
 section.left .historique .cards::-webkit-scrollbar{
     display: none;
 }
+/* popup info */
+.popup-info{
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
 
+    background-color: rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.popup-info.open{
+    display: none;
+}
+
+.popup .content{
+    background-color: #fff;
+    border: 1px solid #0079E9;
+    border-radius: 3px;
+
+    width: 10vw;
+    height: 10vh;
+}
 
 /* map */
 section.map{
