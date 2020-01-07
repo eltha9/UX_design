@@ -1,0 +1,6 @@
+{
+    "name":"safe-job-socket-server",
+    "version": "0.1",
+    "description": "this is the main websocket server who will do the job for CRUD card functions",
+    "dependencies": {}
+}
