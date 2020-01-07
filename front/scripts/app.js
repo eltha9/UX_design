@@ -94,3 +94,50 @@ left_upper_menu.open.addEventListener('click', ()=>{
         left_menu.classList.toggle('open')
     }
 })
+
+// card part 
+
+const cards = left_menu.querySelectorAll('.card')
+
+for(let i=0; i<cards.length; i++){
+    let card_cross = cards[i].querySelector('svg.cross')
+
+    card_cross.addEventListener('click', ()=>{
+        cards[i].classList.toggle('open')
+    })
+}
+
+// card model 
+
+/*
+
+<div class="card alert-4 waiting open">
+    <div class="alert"></div class>
+    <div class="inner-card">
+        <div class="info">
+            <div class="content">
+                <div class="salle">Salle 109</div>
+                <div class="name">Mme Martin <span>( Infirmière )</span></div>
+                <div class="status">Statut : <span></span>Pris en charge par Patricks</span></div>
+            </div>
+
+            <div class="more-info">
+                <div class="line"></div>
+                <div class="patient-name"> Patient : <span>Mme Dosto</span> </div>
+                <h3 ><u>Antécédents</u> :</h3>
+                <div class="antecedent-content">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quae sunt repellendus aliquam culpa ullam asperiores quod quo dolorum minima. Consectetur quod dolore, incidunt enim itaque eum? Enim, impedit distinctio.
+                </div>
+            </div>
+
+            <div class="time">25 minutes</div>
+            <svg class="cross" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="plus" d="M7 2.91669V11.0834" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.91675 7H11.0834" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> 
+            
+        </div>
+    </div>
+</div>
+
+*/

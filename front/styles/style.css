@@ -213,7 +213,7 @@ section.left .upper-menu{
     align-items: center;
     justify-content: space-between;
     border-radius: 6px;
-    margin: 0 20px 0 25px;
+    margin: 0 20px 0px 25px;
 }
 section.left .upper-menu .upper-button{
 
@@ -325,174 +325,190 @@ section.left .open-menu svg{
 
 /* card */
 .card{
-    background-color: #F1F0F0;
-    border-radius: 6px;
+    border-radius: 10px 10px 0 10px;
 
-    height: 16vh;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+    height: 13vh;
+
+
 
     will-change: height;
     transition: height 0.3s ease-out;
 
-    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    /* clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); */
+    position: relative;
+    margin: 0 20px 20px 25px;
+    z-index: 0;
+}
+.card:first-of-type{
+    margin-top:20px;
 }
 
 .card.open{
-    height: 28vh;
+    height: 22vh;
+}
+.card .alert{
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    position: relative;
+    top:0;
+    left:0;
+    transform: translate(-50%,-50%);
+    z-index: -10;
 }
 
-.card .alert{
-    width: 11px;
-    background-color: #8E8D8D;
-    border-radius: 6px 0 0 6px;
-}
 .card.alert-1 .alert{
-    
     background-color: #AEDD73;
     
 }
 .card.alert-2 .alert{
-    
     background-color: #F6B77D;
-    
+
 }
 .card.alert-3 .alert{
-    
-    background-color: #F67D7D;
-    
+    background-color: #FA5050;
+
 }
 .card.alert-4 .alert{
-    
     background-color: #B871DA;
-    
+
 }
-.card .info{
-    flex-grow: 1;
-    position: relative;
-    padding: 10px 10px 10px 30px; 
+
+.card .inner-card{
+    background-color: #FFF;
+    border-radius: 10px 10px 0 10px;
+
+    height: 13vh;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+    /* margin-bottom: 20px; */
+
+    border: 1px solid #B2B2B2;
+
+    will-change: height;
+    transition: height 0.3s ease-out;
+
+    /* clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); */
+    position: absolute;
+    top:0;
+    left:0;
+
+    z-index: 0;
+    display: flex;
+
+    overflow: hidden;
+}
+.card.open .inner-card{
+    height: 22vh;
 }
 
-.card .info .time{
+
+.card .inner-card .info{
+    flex-grow: 1;
+    margin: 14px 10px;
+    position: relative;
+}
+
+.card .inner-card .info .time{
+    position: absolute;
+    font-size: 0.5em;font-weight: lighter;
+    right: 0;
+    top:0;    
+}
+.card .inner-card .info svg.cross{
     position: absolute;
     right: 0;
-    top: 0;
-    transform: translate(-10px, 10px);
-    font-size: 0.6em;
-    font-weight: bolder;
-}
-
-.card .info svg{
-    position: absolute;
     bottom: 0;
-    right: 0;
-    transform: translate(-10px, -10px);
     cursor: pointer;
 }
-.card .info svg path.plus{
-    display: block;
-}
-
-.card.open .info svg path.plus{
-    display: none;
-}
-.card .info svg path.minus{
+.card.open .inner-card .info svg.cross .plus{
     display: none;
 }
 
-.card.open .info svg path.minus{
-    display: block;
-}
+.card .inner-card .info .content .salle{
+    font-size: 1em;
+    font-weight: bold;
 
-.card .info .content{
-    padding-top:0.9em;
-    margin-bottom: 14px;
+    margin-bottom: 8px; 
+
 }
-.card .info .content .salle{
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 0.9em;
+.card .inner-card .info .content .name{
+    font-size: 0.75em;
+    font-weight: normal;
+    margin-bottom: 10px;
 }
-.card .info .content .name{
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 0.9em;
-}
-.card .info .content .name span{
+.card .inner-card .info .content .name span{
     font-size: 0.6em;
     font-weight: normal;
     font-style: italic;
 }
-.card .info .content .status{
-    font-weight: lighter;
+.card .inner-card .info .content .status{
     font-size: 0.6em;
-    color: #2E5200;
+    font-weight: lighter;
+    font-style: italic;
+}
+.unasigned .card .inner-card .info .content .status{
+    color:#417006;
+}
+.asigned .card .inner-card .info .content .status{
+    color:#FF2828;
+}
+.historique .card .inner-card .info .content .status{
+    color:#B2B2B2;
 }
 
-.card.waiting .info .content .status{
-    font-weight: lighter;
-    font-size: 0.6em;
-    color: #FF2828;
-}
 
-
-
-
-.card .info .more-info{
-
-    will-change: opacity;
+.card .inner-card .info .more-info {
     opacity: 0;
-    transition: all 0.3s ease-out;
+    will-change: opacity;
+    transition: opacity 0.3s ease-out;
 }
-.card.open .info .more-info{
-
+.card.open .inner-card .info .more-info {
     opacity: 1;
+    margin-top: 8px;
 }
 
-.card .info .more-info .line{
-    height: 1px;
-    width:40%;
-
+.card .inner-card .info .more-info .line{
     background-color: #E0E0E0;
-
-    margin-bottom: 15px;
-
+    height: 1px;
+    width: 40%;
+    margin-bottom: 5px;
 }
-
-.card .info .more-info .patient-name{
+.card .inner-card .info .more-info .patient-name{
     font-size: 0.6em;
-    font-weight: bold;
+    font-weight: normal;
 }
-.card .info .more-info h3{
+.card .inner-card .info .more-info h3{
+    font-weight: normal;
     font-size: 0.6em;
-    font-weight: bold;
 }
-.card .info .more-info h3 u{
+.card .inner-card .info .more-info h3 u{
     text-decoration: underline;
 }
-.card .info .more-info .antecedent-content{
-    font-size: 0.6em;
+.card .inner-card .info .more-info .antecedent-content{
+    font-size: 0.5em;
     font-weight: lighter;
-    padding-right: 16px;
-    overflow-y: scroll;
-    flex-grow: 1;
+    margin-right:18px;
 
-    max-height: 5vh;
+    overflow-y: scroll;
+    height: 4vh;
+    /* flex-grow: 1; */
 }
-.card .info .more-info .antecedent-content::-webkit-scrollbar{
+.card .inner-card .info .more-info .antecedent-content::-webkit-scrollbar{
     display: none;
 }
+
 
 /* assigned */
 section.left h2{
     font-weight: bold;
     font-size: 1rem;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     color:#1B5489;
+    margin: 25px 20px 0px 25px;
     
 }
 
@@ -501,14 +517,16 @@ section.left .cards-div{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    margin: 0 20px 0 25px;
+    /* margin: 0 20px 0 25px; */
+    /* max-height: 34vh;
+    overflow: scroll; */
 }
 section.left .cards-div .cards{
 
     overflow-y: scroll;
     flex-grow: 1;
-    max-height: 34vh;
-    min-height: fit-content;
+    /* min-height: fit-content; */
+    max-height: 34vh ;
 }
 section.left .cards-div .cards::-webkit-scrollbar{
     display: none;
@@ -528,7 +546,7 @@ section.left .historique{
 }
 
 section.left .historique .cards{
-    max-height: 77vh;
+    max-height: 80vh;
 
     overflow-y: scroll;
 }
