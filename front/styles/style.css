@@ -111,6 +111,9 @@ nav .right-menu svg.selected{
 .popup.open{
     transform: translateX(0%);
 }
+.popup svg.close-popup{
+    cursor: pointer;
+}
 
 .popup.popup-team .menu{
     color: #1B5489;
@@ -123,9 +126,7 @@ nav .right-menu svg.selected{
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.popup.popup-team .menu svg{
-    cursor: pointer;
-}
+
 
 .popup.popup-team .content{
     width: 52%;

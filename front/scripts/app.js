@@ -6,8 +6,11 @@ const left_menu = main.querySelector('section.left')
 // nav
 const popups = {
     setting: main.querySelector('.popup-setting'),
-    team: main.querySelector('.popup-team')
+    team: main.querySelector('.popup-team'),
 }
+
+popups.setting_close = popups.setting.querySelector('svg.close-popup')
+popups.team_close = popups.team.querySelector('svg.close-popup')
 
 const nav_buttons= {
     setting: nav.querySelector('.setting'),
@@ -40,6 +43,14 @@ nav_buttons.team.addEventListener('click', ()=>{
         popups.team.classList.toggle('open')
         nav_buttons.team.classList.toggle('selected')
     }
+})
+
+
+popups.setting_close.addEventListener('click', ()=>{
+    popups.setting.classList.toggle('open')
+})
+popups.team_close.addEventListener('click', ()=>{
+    popups.team.classList.toggle('open')
 })
 
 
