@@ -157,6 +157,16 @@ for(let i=0; i<cards.length; i++){
 // popup info
 
 const popup_info= {
-    button: left_menu.querySelector('h2.special span.info'),
+    button:{
+     open: left_menu.querySelector('h2.special span.info'),
+     close: document.querySelector('.popup-info .content .top svg.cross')
+    },    
     div: document.querySelector('.popup-info')
 }
+
+popup_info.button.open.addEventListener('click', ()=>{
+    popup_info.div.classList.toggle('open')
+})
+popup_info.button.close.addEventListener('click', ()=>{
+    popup_info.div.classList.toggle('open')
+})
