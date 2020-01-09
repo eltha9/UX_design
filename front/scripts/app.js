@@ -170,3 +170,53 @@ popup_info.button.open.addEventListener('click', ()=>{
 popup_info.button.close.addEventListener('click', ()=>{
     popup_info.div.classList.toggle('open')
 })
+
+
+// MAP
+const map_button = {
+    rdc: map.querySelector('.menu span[data-floor="rdc"]'),
+    first: map.querySelector('.menu span[data-floor="1"]'),
+    second: map.querySelector('.menu span[data-floor="2"]')
+}
+
+const map_floor = {
+    rdc: map.querySelector('.floors .floor[data-floor="rdc"]'),
+    first: map.querySelector('.floors .floor[data-floor="1"]'),
+    second: map.querySelector('.floors .floor[data-floor="2"]')
+}
+
+map_button.rdc.addEventListener('click', ()=>{
+    if(!map_button.rdc.classList.contains('selected') && !map_floor.rdc.classList.contains('selected')){
+        map_button.rdc.classList.add('selected')
+        map_floor.rdc.classList.add('selected')
+
+        map_button.first.classList.remove('selected')
+        map_floor.first.classList.remove('selected')
+        map_button.second.classList.remove('selected')
+        map_floor.second.classList.remove('selected')
+    }
+})
+
+map_button.first.addEventListener('click', ()=>{
+    if(!map_button.first.classList.contains('selected') && !map_floor.first.classList.contains('selected')){
+        map_button.first.classList.add('selected')
+        map_floor.first.classList.add('selected')
+
+        map_button.rdc.classList.remove('selected')
+        map_floor.rdc.classList.remove('selected')
+        map_button.second.classList.remove('selected')
+        map_floor.second.classList.remove('selected')
+    }
+})
+
+map_button.second.addEventListener('click', ()=>{
+    if(!map_button.second.classList.contains('selected') && !map_floor.second.classList.contains('selected')){
+        map_button.second.classList.add('selected')
+        map_floor.second.classList.add('selected')
+
+        map_button.first.classList.remove('selected')
+        map_floor.first.classList.remove('selected')
+        map_button.rdc.classList.remove('selected')
+        map_floor.rdc.classList.remove('selected')
+    }
+})

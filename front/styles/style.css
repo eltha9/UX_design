@@ -189,7 +189,7 @@ main{
 }
 /* left */
 section.left{
-    /* background-color: pink; */
+    background-color: white;
     width: 27%;
     height: 100%;
     position: absolute;
@@ -721,5 +721,67 @@ section.popup-info .content .icon-definition tr .icon-container img{
 
 /* map */
 section.map{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
 
+section.map .map-upper-menu{
+    margin-top:25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+section.map .map-upper-menu .menu{
+    width:40%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-between;
+}
+section.map .map-upper-menu .menu span{
+    color: #0079E9;
+    font-size: 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+section.map .map-upper-menu .menu span div{
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: #0079E9;
+    margin-top: 10px;
+
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.3s ease-out;
+}
+section.map .map-upper-menu .menu span.selected div{
+    opacity: 1;
+}
+section.map .floors{
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.map .floors .floor{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width:45%;
+}
+section.map .floors .floor.selected{
+    display: flex;
+}
+section.map .floors .floor img{
+    width:100%;
 }
