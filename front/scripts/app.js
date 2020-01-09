@@ -220,3 +220,27 @@ map_button.second.addEventListener('click', ()=>{
         map_floor.rdc.classList.remove('selected')
     }
 })
+
+
+
+/* 
+
+    logique content 
+
+*/
+
+const socket = io('http://localhost:3000')
+
+socket.on('message', (msg)=>{
+    console.log(msg)
+})
+
+socket.on('new_card', (data)=>{
+
+
+})
+
+const test = (msg)=>{
+
+    socket.emit('truc', msg)
+}

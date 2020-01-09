@@ -347,7 +347,7 @@ section.left .open-menu svg{
 }
 
 .card.open{
-    height: 22vh;
+    height: 18vh;
 }
 .card .alert{
     width: 16px;
@@ -419,7 +419,7 @@ section.left .open-menu svg{
     overflow: hidden;
 }
 .card.open .inner-card{
-    height: 22vh;
+    height: 18vh;
 }
 
 
@@ -467,10 +467,10 @@ section.left .open-menu svg{
     font-weight: lighter;
     font-style: italic;
 }
-.unasigned .card .inner-card .info .content .status{
+.asigned .card .inner-card .info .content .status{
     color:#417006;
 }
-.asigned .card .inner-card .info .content .status{
+.unasigned .card .inner-card .info .content .status{
     color:#FF2828;
 }
 .historique .card .inner-card .info .content .status{
@@ -491,12 +491,12 @@ section.left .open-menu svg{
 .card .inner-card .info .more-info .line{
     background-color: #E0E0E0;
     height: 1px;
-    width: 40%;
+    width: 60%;
     margin-bottom: 5px;
 }
 .card .inner-card .info .more-info .patient-name{
-    font-size: 0.6em;
-    font-weight: normal;
+    font-size: 0.5em;
+    font-weight: lighter;
 }
 .card .inner-card .info .more-info h3{
     font-weight: normal;
@@ -509,6 +509,7 @@ section.left .open-menu svg{
     font-size: 0.5em;
     font-weight: lighter;
     margin-right:18px;
+    margin-top:10px;
 
     overflow-y: scroll;
     height: 4vh;
